@@ -1,0 +1,44 @@
+/* MangoMod example user theme: Forest Night.
+ * Install: copy this file to ~/.config/mangomod/themes/
+ * Then: MangoMod → Preferences → Appearance → Theme → "forest-night (custom)".
+ * A custom file only needs the selectors you want to change — everything
+ * else falls back to the active built-in theme. */
+
+@define-color mm_accent        #4ade80;
+@define-color mm_accent_dark   #16a34a;
+@define-color mm_accent_glow   #86efac;
+@define-color mm_accent_dim    rgba(74, 222, 128, 0.14);
+@define-color mm_accent_hover  rgba(74, 222, 128, 0.22);
+@define-color mm_accent_border rgba(74, 222, 128, 0.38);
+
+/* Sidebar selection glow */
+.mm-sidebar-listbox row:selected {
+    background: @mm_accent_dim;
+    color: @mm_accent_glow;
+    font-weight: 600;
+}
+
+/* Palette cards pick up the accent on hover */
+.mm-palette-block:hover {
+    background: @mm_accent_dim;
+    border-color: @mm_accent_border;
+}
+
+/* Rounder action blocks */
+.mm-action-block {
+    border-radius: 16px;
+}
+
+.mm-block-head {
+    background: rgba(74, 222, 128, 0.08);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+/* Bigger, greener badges */
+.mm-badge {
+    background-color: @mm_accent_dim;
+    color: @mm_accent_glow;
+    font-size: 12px;
+    padding: 3px 10px;
+}

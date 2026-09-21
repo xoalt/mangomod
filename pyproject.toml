@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mangomod"
+version = "0.1.0"
+description = "A polished GTK4/libadwaita GUI configurator for the Mango Wayland compositor"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+dependencies = [
+    # PyGObject and pycairo should be provided via system package manager:
+    # Arch:   sudo pacman -S python-gobject gtk4 libadwaita python-cairo
+    # Fedora: sudo dnf install python3-gobject gtk4 libadwaita python3-cairo
+    # Ubuntu: sudo apt install python3-gi gir1.2-gtk-4.0 gir1.2-adw-1 python3-cairo
+]
+
+[project.scripts]
+mangomod = "mangomod.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["mangomod"]

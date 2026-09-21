@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="mangoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb703" />
+      <stop offset="50%" stop-color="#fb8500" />
+      <stop offset="100%" stop-color="#d90429" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2d6a4f" />
+      <stop offset="100%" stop-color="#52b788" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Mango fruit base -->
+  <path d="M 64,18 C 96,18 116,46 112,80 C 108,110 82,120 54,120 C 30,120 16,102 16,74 C 16,40 38,18 64,18 Z"
+        fill="url(#mangoGrad)" filter="url(#shadow)" />
+
+  <!-- Leaf -->
+  <path d="M 64,18 C 64,4 82,2 90,8 C 92,18 78,22 64,18 Z"
+        fill="url(#leafGrad)" />
+
+  <!-- Tiling Grid Windows Overlay -->
+  <rect x="36" y="44" width="24" height="48" rx="4" fill="#ffffff" fill-opacity="0.25" stroke="#ffffff" stroke-width="2" stroke-opacity="0.7" />
+  <rect x="66" y="44" width="30" height="22" rx="4" fill="#ffffff" fill-opacity="0.35" stroke="#ffffff" stroke-width="2" stroke-opacity="0.8" />
+  <rect x="66" y="70" width="30" height="22" rx="4" fill="#ffffff" fill-opacity="0.25" stroke="#ffffff" stroke-width="2" stroke-opacity="0.7" />
+</svg>

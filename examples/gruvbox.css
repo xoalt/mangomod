@@ -1,0 +1,350 @@
+/* MangoMod full user theme: Gruvbox Dark (official palette: #282828 bg, #fabd2f yellow accent).
+ * Install: copy to ~/.config/mangomod/themes/
+ * Then: Preferences → Appearance → Theme → "gruvbox (custom)".
+ * This file styles EVERY MangoMod selector — it fully reskins the app. */
+@define-color mm_accent        #fabd2f;
+@define-color mm_accent_dark   #d79921;
+@define-color mm_accent_glow   #f9d37a;
+@define-color mm_accent_dim    rgba(250, 189, 47, 0.14);
+@define-color mm_accent_hover  rgba(250, 189, 47, 0.22);
+@define-color mm_accent_border rgba(250, 189, 47, 0.38);
+@define-color mm_accent_glowx  rgba(250, 189, 47, 0.55);
+
+@define-color window_bg_color    #282828;
+@define-color window_fg_color    #ebdbb2;
+@define-color view_bg_color      #2b2622;
+@define-color view_fg_color      #ebdbb2;
+@define-color headerbar_bg_color #282828;
+@define-color card_bg_color      #3c3836;
+@define-color card_fg_color      #ebdbb2;
+@define-color popover_bg_color   #3c3836;
+@define-color popover_fg_color   #ebdbb2;
+@define-color dialog_bg_color    #2b2622;
+@define-color dialog_fg_color    #ebdbb2;
+
+@define-color mm_border         rgba(250, 189, 47, 0.12);
+@define-color mm_border_strong  rgba(250, 189, 47, 0.22);
+
+window {
+    background-color: @window_bg_color;
+    color: @window_fg_color;
+}
+
+headerbar,
+.mm-sidebar-bg {
+    background-color: @headerbar_bg_color;
+    background-image: linear-gradient(180deg, rgba(215, 153, 33, 0.14), rgba(215, 153, 33, 0.0));
+    box-shadow: none;
+    border-bottom: 1px solid @mm_border;
+    color: @window_fg_color;
+}
+
+.navigation-sidebar {
+    background-color: transparent;
+    border-right: 1px solid @mm_border;
+}
+
+.mm-sidebar-listbox {
+    background: transparent;
+    border: none;
+}
+
+.mm-sidebar-listbox row {
+    border-radius: 12px 4px 12px 4px;
+    margin: 1px 6px;
+    padding: 6px 10px;
+    transition: background 120ms ease, color 120ms ease;
+    color: @window_fg_color;
+    border-left: 2px solid transparent;
+}
+
+.mm-sidebar-listbox row:hover {
+    background: rgba(250, 189, 47, 0.08);
+}
+
+.mm-sidebar-listbox row:selected {
+    background: @mm_accent_dim;
+    color: @mm_accent_glow;
+    font-weight: 700;
+    border-left: 2px solid @mm_accent;
+}
+
+.mm-sidebar-listbox row:selected image,
+.mm-sidebar-listbox row:selected label {
+    color: @mm_accent_glow;
+}
+
+.mm-sidebar-section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(250, 189, 47, 0.45);
+    margin-left: 12px;
+    margin-top: 14px;
+    margin-bottom: 4px;
+}
+
+entry,
+.mm-search-entry {
+    color: @window_fg_color;
+    background-color: @card_bg_color;
+    border: 1px solid @mm_border;
+    border-radius: 12px 4px 12px 4px;
+}
+
+entry:focus,
+.mm-search-entry:focus-within {
+    border-color: @mm_accent_border;
+    box-shadow: 0 0 0 1px @mm_accent_dark;
+    outline: none;
+}
+
+button.suggested-action {
+    background: linear-gradient(180deg, @mm_accent, @mm_accent_dark);
+    color: #17122b;
+    font-weight: 700;
+    border-radius: 12px 4px 12px 4px;
+    border: none;
+    padding: 6px 16px;
+}
+
+button.suggested-action:hover {
+    box-shadow: 0 0 14px @mm_accent_hover;
+}
+
+button.destructive-action {
+    border-radius: 12px 4px 12px 4px;
+}
+
+button.flat:hover {
+    background: @mm_accent_dim;
+}
+
+.mm-preview {
+    background-color: #1d2021;
+    border: 1px solid @mm_border;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-family: monospace;
+    font-size: 12px;
+    color: rgba(235, 219, 178, 0.85);
+    caret-color: @mm_accent_glow;
+}
+
+.mm-preview selection {
+    background-color: @mm_accent_dim;
+}
+
+.mm-banner-running {
+    background-color: rgba(52, 211, 153, 0.12);
+    border-bottom: 1px solid rgba(52, 211, 153, 0.25);
+    color: #6ee7b7;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.mm-banner-stopped {
+    background-color: rgba(251, 113, 133, 0.10);
+    border-bottom: 1px solid rgba(251, 113, 133, 0.25);
+    color: #fda4af;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.mm-badge {
+    background-color: @mm_accent_dim;
+    color: @mm_accent_glow;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid @mm_accent_border;
+}
+
+.mm-key-badge {
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 7px;
+    border-radius: 6px;
+    background: rgba(250, 189, 47, 0.10);
+    border: 1px solid @mm_border_strong;
+    color: @mm_accent_glow;
+}
+
+.mm-canvas-frame {
+    background: #1d2021;
+    border: 1px solid @mm_border;
+    border-radius: 16px;
+    min-height: 220px;
+}
+
+.mm-dirty-dot {
+    color: @mm_accent_glow;
+    font-size: 16px;
+    margin-right: 4px;
+}
+
+.mm-pane-title,
+.mm-sidebar-section-label {
+    color: rgba(250, 189, 47, 0.60);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.mm-palette-list {
+    background: transparent;
+    border: none;
+}
+
+.mm-palette-block {
+    background: rgba(250, 189, 47, 0.06);
+    border: 1px solid @mm_border;
+    border-radius: 12px 4px 12px 4px;
+    margin: 2px 4px;
+    padding: 8px 10px;
+    transition: background 140ms ease, border-color 140ms ease, transform 120ms ease;
+}
+
+.mm-palette-block:hover {
+    background: @mm_accent_dim;
+    border-color: @mm_accent_border;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(215, 153, 33, 0.30);
+}
+
+.mm-palette-dim,
+.mm-palette-block:disabled,
+.mm-palette-block:disabled .mm-block-name {
+    opacity: 0.38;
+    filter: grayscale(1);
+    box-shadow: none;
+    transition: opacity 160ms ease;
+}
+
+.mm-palette-block:disabled {
+    opacity: 0.38;
+}
+
+.mm-palette-block:disabled:hover {
+    transform: none;
+}
+
+.mm-block-handle {
+    opacity: 0.55;
+    color: rgba(250, 189, 47, 0.60);
+}
+
+.mm-block-name {
+    font-weight: 700;
+    color: @window_fg_color;
+}
+
+.mm-drop-canvas {
+    border: 2px dashed rgba(250, 189, 47, 0.30);
+    border-radius: 12px;
+    margin: 12px;
+    transition: border-color 160ms ease, background 160ms ease;
+}
+
+.mm-drop-canvas.mm-drop-over {
+    border-color: @mm_accent_glow;
+    background: @mm_accent_dim;
+    box-shadow: inset 0 0 24px rgba(215, 153, 33, 0.20);
+}
+
+.mm-action-block {
+    background: #3c3836;
+    border: 1px solid @mm_border_strong;
+    border-radius: 12px 4px 12px 4px;
+    margin: 4px 4px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.mm-block-head {
+    background: rgba(250, 189, 47, 0.10);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 4px;
+    border-bottom: 1px solid @mm_border;
+}
+
+.mm-block-delete {
+    opacity: 0.4;
+    margin: 2px;
+}
+
+.mm-block-delete:hover {
+    opacity: 1;
+    color: #fda4af;
+}
+
+.mm-badge-launch { background: rgba(250, 189, 47, 0.16); color: #f9d37a; }
+.mm-badge-window { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+.mm-badge-focus  { background: rgba(52, 211, 153, 0.15); color: #34d399; }
+.mm-badge-group  { background: rgba(129, 140, 248, 0.18); color: #a5b4fc; }
+.mm-badge-tags   { background: rgba(251, 146, 60, 0.15); color: #fb923c; }
+.mm-badge-monitor{ background: rgba(232, 121, 249, 0.16); color: #f0abfc; }
+.mm-badge-layout { background: rgba(74, 222, 128, 0.15); color: #4ade80; }
+.mm-badge-system { background: rgba(148, 163, 184, 0.15); color: #94a3b8; }
+.mm-badge-mouse  { background: rgba(250, 204, 21, 0.13); color: #facc15; }
+
+.mm-param-label {
+    color: rgba(235, 219, 178, 0.65);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.mm-trigger-editor {
+    background: rgba(250, 189, 47, 0.05);
+    border: 1px solid @mm_border;
+    border-radius: 12px 4px 12px 4px;
+    padding: 8px 10px;
+}
+
+.mm-param-hint {
+    opacity: 0.5;
+    font-size: 11px;
+    font-style: italic;
+}
+
+.card,
+boxed-list,
+.boxed-list {
+    background-color: @card_bg_color;
+    border: 1px solid @mm_border;
+    border-radius: 12px 4px 12px 4px;
+}
+
+dropdown,
+popover {
+    border-radius: 10px;
+}
+
+popover contents {
+    background-color: @popover_bg_color;
+    border: 1px solid @mm_border_strong;
+    border-radius: 12px;
+}
+
+scrollbar slider {
+    background-color: rgba(250, 189, 47, 0.30);
+    border-radius: 999px;
+    min-width: 8px;
+    min-height: 8px;
+}
+
+scrollbar slider:hover {
+    background-color: rgba(250, 189, 47, 0.55);
+}
+
+toast {
+    background-color: #3c3836;
+    color: #ede9fe;
+    border: 1px solid @mm_accent_border;
+    border-radius: 999px;
+}
